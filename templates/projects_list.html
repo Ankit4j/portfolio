@@ -1,0 +1,23 @@
+<div class="mt-5 mb-2">
+    {% for project in projects %}
+    <h2 class="mt-2 mb-4">{{project['title']}}</h2>
+
+    <div class="row mt-2 mb-4">
+        
+        <div class="col-md-6">
+            <div class="project-text">
+                <p>{{project['body']}}</p>
+            </div>
+            <a href="{{ project['project_url'] }}" class="project-btn btn btn-outline-primary">Visit</a>
+            
+        </div>
+        <div class="col-md-6">
+            <img class="img-thumbnail" src="{{project['image_url']}}">
+        </div>
+    
+        <hr class="mt-5 mb-3">
+        
+    </div>
+    
+    {% endfor %}
+</div>

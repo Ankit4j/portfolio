@@ -12,47 +12,21 @@
             object-fit: cover;
         }
 
-        .project-text{
-            margin-top: 80px;
-        }
-
         
     </style>
 </head>
 <body>
-    <img class="img-fluid mb-4" src="../static/top-image.jpg">
+    {% include 'nav.html' %}
+    <img class="img-fluid mb-4" src="../static/top-image.jpg" style="margin-top:56px">
     <div class="container">
     <div class="mb-4">
     <h1 class="text-center">My Portfolio</h1>
     <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
-    <div class="mt-5 mb-2">
-    {% for project in projects %}
-    <h2 class="mt-2 mb-4">{{project['title']}}</h2>
-
-    <div class="row mt-2 mb-4">
-        
-        <div class="col-6">
-            <div class="project-text">
-                <p>{{project['body']}}</p>
-            </div>
-            <button class="project-btn btn btn-outline-primary">Visit</button>
-            
-        </div>
-        <div class="col-6">
-            <img class="img-thumbnail" src="{{project['image_url']}}">
-        </div>
     
-        <hr class="mt-5 mb-3">
-        
-    </div>
+    {% include 'projects_list.html' %}
     
-    {% endfor %}
     </div>
-    <div class="text-center mt-3 mb-3">
-    <button class="btn btn-primary">Contact</button>
-    <button class="btn btn-primary">About</button>
-    </div>
-    </div>
+    {% include 'footer.html' %}
 </body>
 </html>
